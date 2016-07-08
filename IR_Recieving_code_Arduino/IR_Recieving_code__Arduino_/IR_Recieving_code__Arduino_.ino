@@ -23,11 +23,13 @@ void setup()
   pinMode(LED_FORWARD_PIN, OUTPUT);
   pinMode(LED_REVERSE_PIN, OUTPUT);
   pinMode(LED_STOP_PIN, OUTPUT);
-  irrecv.enableIRIn(); // Start the receiver
+  //Start the receiver
+  irrecv.enableIRIn(); 
   Serial.begin(9600);
 }
  
 void loop() {
+  
   if (irrecv.decode(&results)) {
     
     digitalWrite(LED_FORWARD_PIN, LOW);
@@ -48,5 +50,5 @@ void loop() {
     }
     
   }
-  //delay(100);
+  
 }
